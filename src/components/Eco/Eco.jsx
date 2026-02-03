@@ -1,59 +1,96 @@
-import React from "react";
-import Ping from "../Ping";
-import matrix1 from "../../assets/matrix1.png";
-import matrix2 from "../../assets/matrix2.svg";
-import matrix3 from "../../assets/matrix3.png";
+
 
 const Eco = () => {
   return (
     <>
-      <div>
-        <div className="py-20 mb-10 relative">
-          <h1 className="text-center text-4xl lg:text-6xl text-white font-extrabold max-w-[600px] mx-auto ">
-            An ecosystem of integrations
-          </h1>
-        </div>
-        <div>
-          <Ping />
-        </div>
-        <div className="mb-20 hidden md:block">
-          <span className="w-[1px] h-[30px] bg-gray-600 block transform translate-x-[469px] translate-y-[100px] "></span>
-          <span className="w-[350px] h-[1px] block bg-gray-600 transform translate-x-[120px] translate-y-[100px]"></span>
-          <span className="w-[1px] h-[20px] bg-gray-600 block transform translate-x-[429px] translate-y-[100px] "></span>
-          <span className="w-[1px] h-[20px] bg-gray-600 block transform translate-x-[259px] translate-y-[80px] "></span>
-          <span className="w-[1px] h-[20px] bg-gray-600 block transform translate-x-[120px] translate-y-[60px] "></span>
-        </div>
+   <div className="max-w-6xl mx-auto p-6 bg-white">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    
+    {/* Left Column: Recent Activity */}
+    <div className="border border-gray-200 rounded-xl p-6 shadow-sm">
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">Recent Activity</h2>
+      <p className="text-gray-600 mb-6">Log In to see recent activity</p>
+      <a 
+        href="/wallet" 
+        className="inline-block bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-8 rounded-lg transition duration-200 shadow-sm hover:shadow-md"
+      >
+        Connect Wallet
+      </a>
+    </div>
 
-        <div className="flex flex-col items-center md:items-start md:flex-row justify-between  md:w-[530px] mt-32">
-          <div className="">
-            <div className="w-fit mb-5 md:mb-0 p-10 bg-gray-700 ">
-              <img
-                src={matrix1}
-                className="w-[200px] h-[200px] md:w-[80px] md:h-[80px] rounded-full object-contain  bg-[#0c1322]"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="">
-            <div className="w-fit mb-5 md:mb-0 p-10 bg-gray-700">
-              <img
-                src={matrix2}
-                className="w-[200px] h-[200px] md:w-[80px] md:h-[80px] rounded-full object-contain  bg-[#0c1322]"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="">
-            <div className="w-fit mb-5 md:mb-0 p-10 bg-gray-700">
-              <img
-                src={matrix3}
-                className="w-[200px] h-[200px] md:w-[80px] md:h-[80px] rounded-full object-contain  bg-[#0c1322]"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
+    {/* Right Column: Leaderboard */}
+    <div className="border border-gray-200 rounded-xl p-6 shadow-sm">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-900">Leaderboard</h2>
+        <a 
+          href="/wallet" 
+          className="text-sm text-gray-600 hover:text-gray-900 hover:underline transition"
+        >
+          View all →
+        </a>
       </div>
+      
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-full">
+          <thead>
+            <tr className="border-b border-gray-300">
+              <th className="text-left py-3 px-4 text-gray-600 font-medium">Position</th>
+              <th className="text-left py-3 px-4 text-gray-600 font-medium">Username</th>
+              <th className="text-left py-3 px-4 text-gray-600 font-medium">Wallet</th>
+              <th className="text-left py-3 px-4 text-gray-600 font-medium">Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Make each row clickable to wallet page */}
+            {[
+              { position: 15, username: 'olalayaya', wallet: '0xe5...8024', points: '1,067,572' },
+              { position: 16, username: 'Artem1', wallet: '0xf8...1319', points: '1,033,035' },
+              { position: 17, username: 'Blokoli.somi', wallet: '0xfe...4bc2', points: '1,017,875' },
+              { position: 18, username: 'Channe.Somi', wallet: '0xab...fcee', points: '990,345' },
+              { position: 19, username: 'Hollyman', wallet: '0xfe...ae65', points: '971,356' },
+            ].map((user) => (
+              <tr 
+                key={user.position}
+                className="border-b border-gray-200 hover:bg-gray-50 transition cursor-pointer"
+                onClick={() => window.location.href = '/wallet'}
+              >
+                <td className="py-4 px-4 text-gray-900 font-medium">{user.position}</td>
+                <td className="py-4 px-4 text-gray-900">
+                  <a href="/wallet" className="hover:text-gray-700 hover:underline">
+                    {user.username}
+                  </a>
+                </td>
+                <td className="py-4 px-4">
+                  <a 
+                    href="/wallet" 
+                    className="text-blue-600 hover:text-blue-800 font-mono hover:underline"
+                  >
+                    {user.wallet}
+                  </a>
+                </td>
+                <td className="py-4 px-4 text-gray-900 font-medium">{user.points}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <p className="text-gray-500 text-sm mt-6 italic">
+        Leaderboard positions are updated on a daily basis.
+      </p>
+      
+      {/* View Wallet Button for mobile */}
+      <div className="mt-6 lg:hidden">
+        <a 
+          href="/wallet" 
+          className="block text-center w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-8 rounded-lg transition duration-200 shadow-sm hover:shadow-md"
+        >
+          Go to Wallet
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
     </>
   );
 };
