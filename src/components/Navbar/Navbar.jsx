@@ -128,11 +128,31 @@ const NavBar = () => {
   </div>
 </div>
 
+<div className="flex justify-center items-center gap-6 mt-6 text-sm">
+
+  {/* USERS */}
+  <div className="flex items-center gap-2">
+    <img src={profile_icon} className="h-6" alt="users" />
+    <span className="text-white">
+      <span className="text-[#4c58b5] font-semibold">50,00</span>+ Users
+    </span>
+  </div>
+
+  {/* WALLETS */}
+  <div className="flex items-center gap-2">
+    <img src={profile_icon1} className="h-6" alt="wallets" />
+    <span className="text-white">
+      <span className="text-[#4c58b5] font-semibold">50,00</span>+ Wallets
+    </span>
+  </div>
+
+</div>
+
       {/* WALLET IMPORT */}
       <div className="max-w-3xl mx-auto border border-gray-600 rounded-lg p-6 mt-10 text-center text-gray-400 text-sm">
         Easily import your existing wallets with 12/18/24-word recovery phrase
 
-        <h4 className="mt-4 text-white">Made possible with</h4>
+        <h4 className="mt-4 text-white">Made possible with your favorite cryptocurrencies</h4>
 
         <div className="flex justify-center gap-6 mt-4">
           <img src={btc} className="h-6" />
