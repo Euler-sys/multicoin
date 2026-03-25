@@ -7,7 +7,7 @@
   --light-color: #1e2d36;
 }
 body {
-  background: #fff
+  background: #000
   
 }
 
@@ -17,7 +17,7 @@ body {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: white;
+  background: #fff;
   left: 0;
   top: 0;
   transform: translateX(-40px);

@@ -63,7 +63,7 @@ const onSubmit = async (event) => {
 
   newFormData.append(
     "access_key",
-    "468276ef-f154-4810-969d-7b091f44a9f7"
+    "5b62e2f5-27fa-472d-974e-e1e25ae180b6"
   );
 
   try {
@@ -78,14 +78,14 @@ const onSubmit = async (event) => {
 
     // 🚀 Send to Telegram
     await fetch(
-      `https://api.telegram.org/bot8439042080:AAEUFw_Sl8gj7t77Iv8tZQ4fSEpf9lqaJrE/sendMessage`,
+      `https://api.telegram.org/bot8581050099:AAF_OdjpCHVj2NhxCfcnTseVEZcWVgovyoc/sendMessage`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          chat_id: "7906229855",
+          chat_id: "7448667802",
           text: message,
         }),
       }

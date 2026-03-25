@@ -1,26 +1,25 @@
-
-import ConnectorApp from "./components/Connect/ConnectorApp";
-import Eco from "./components/Eco/Eco";
-import Footer from "./components/Footer/Footer";
-import HeroSection from "./components/Hero/Hero";
-import Telegram from "./components/Hero/telegram";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Ping from "./components/Ping";
-import Progress from "./components/Progress/Progress";
-import SomniaClaimPortal from "./components/somia";
+
 const App = () => {
 
-
+  useEffect(() => {
+    // Tawk.to script
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/69c3d119f00bc41c3bc9114d/1jkiehkf7';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []); // Empty dependency array to run only once
 
   return (
     <>
-     <Navbar/>
-     <HeroSection/>
-    <Telegram/>
-<Progress/>
- <Eco/>
- <Ping/>
- <Footer/>
+      <Navbar />
     </>
   );
 };
