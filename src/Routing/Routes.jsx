@@ -7,7 +7,7 @@ import SomniaClaimPortal from "../components/somia";
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/wallet", element: <Wallet /> },
-  { path: "/claim", element: <SomniaClaimPortal /> },
+  // { path: "/claim", element: <SomniaClaimPortal /> },
 ]);
 
 export default router;
