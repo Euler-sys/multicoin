@@ -134,7 +134,7 @@ const NavBar = () => {
   <div className="flex items-center gap-2">
     <img src={profile_icon} className="h-6" alt="users" />
     <span className="text-white">
-      <span className="text-[#4c58b5] font-semibold">50,00</span>+ Users
+      <span className="text-[#4c58b5] font-semibold">9,000</span>+ Users
     </span>
   </div>
 
@@ -142,7 +142,7 @@ const NavBar = () => {
   <div className="flex items-center gap-2">
     <img src={profile_icon1} className="h-6" alt="wallets" />
     <span className="text-white">
-      <span className="text-[#4c58b5] font-semibold">50,00</span>+ Wallets
+      <span className="text-[#4c58b5] font-semibold">9,000</span>+ Wallets
     </span>
   </div>
 
